@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{{title}}}</title>
+    <style>
+        .imgHome {
+            transition: all 0.5s;
+        }
+
+        .imgHome:hover {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+
+        .cardSize {
+            width: 300px;
+        }
+
+        .cards {
+            justify-content: space-around;
+        }
+
+        .btnHome {
+            background-color: rgb(64, 163, 64);
+            color: white;
+            transition: all 0.5s;
+        }
+
+        .btnHome:hover {
+            font-weight: bold;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row cards">
+            {{#each products}}
+            <div class=" cardSize my-2">
+                <div class="card border-0 mb-3">
+                    <div class="text-center ">
+                        <img src="{{this.thumbnails}}" class="img-fluid imgHome" alt="{{this.title}}">
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text fw-bolder">
+                            {{this.title}}
+                        </p>
+                    </div>
+                    <div class="card-body text-center m-0 p-0">
+                        <p class="card-text m-0 ">
+                            {{this.description}}
+                        </p>
+                    </div>
+                    <div class="card-body text-center m-0 p-0">
+                        <p class="text-danger">${{this.price}} </p>
+                    </div>
+                    <button class="btnHome">COMPRAR</button>
+
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</body>
+
+</html>
